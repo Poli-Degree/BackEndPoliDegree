@@ -7,7 +7,8 @@ async function createUser (req,res) {
     const newUserObject = {
         username: req.body.username,
         password: req.body.password,
-        usertype: req.body.usertype
+        usertype: req.body.usertype,
+        email: req.body.email
     }
 
     dbManager.User.create(newUserObject).then(

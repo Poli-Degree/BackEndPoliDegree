@@ -7,7 +7,8 @@ module.exports = (sequelize, Sequelize) => {
         },
         username: Sequelize.STRING,
         password: Sequelize.STRING,
-        usertype: Sequelize.STRING
+        usertype: Sequelize.STRING,
+        email: Sequelize.STRING
         }, {
             tableName: "users"
         });
