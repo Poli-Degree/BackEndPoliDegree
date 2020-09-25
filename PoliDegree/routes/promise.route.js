@@ -7,4 +7,9 @@ router.post('/',promiseController.createPromise);
 
 router.get('/',promiseController.findAllPromises);
 
+router.get ('/:idProyect', promiseController.findPromisesByIdProyect);
+
+router.delete ('/:idPromise', promiseController.deletePromiseById);
+
+router.put ('/:idPromise', promiseController.updatePromises);
 module.exports = router;
