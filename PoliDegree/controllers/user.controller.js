@@ -50,6 +50,7 @@ async function findAllUsers (req, res){
 
 async function deleteUserById (req, res ) {
 
+        try {
         const {idUser} = req.params;
 
         const user = await dbManager.User.destroy(
@@ -57,13 +58,22 @@ async function deleteUserById (req, res ) {
                 where: {
                     idUser: idUser
                 }
-            },
-            res.send('user with id: ' + idUser + ' delete')
-        )
+            }
+        );
+        res.send('user with id: ' + idUser + ' delete');
+        } catch (e) {
+            // Print error on console
+            console.log(e);
+            // Send error message as a response 
+            res.status(500).send({
+                message: "Some error occurred"
+            });
+        }
 }
 
 async function updateUserById (req,res) {
 
+    try {
     const {idUser} = req.params;
 
     const user = await dbManager.User.update(
@@ -73,9 +83,17 @@ async function updateUserById (req,res) {
                 where: {
                     idUser: idUser
                 }
-            },
-            res.send('User with id: ' + idUser + ' update')
-    )
+            }      
+    ); 
+    res.send('User with id: ' + idUser + ' update');
+    } catch (e) {
+            // Print error on console
+            console.log(e);
+            // Send error message as a response 
+            res.status(500).send({
+                message: "Some error occurred"
+            });
+        }
 }
 
 async function findUserById (req,res) {

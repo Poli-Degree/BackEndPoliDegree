@@ -79,6 +79,7 @@ async function findProyectByIdUser (req, res) {
 
 async function updateProyectByIdUser (req, res) {
 
+    try {
     const {idUser} = req.params;
 
     const Proyect = await dbManager.Proyect.update (
@@ -90,14 +91,23 @@ async function updateProyectByIdUser (req, res) {
                 {where: {
                     idUser: idUser
                 } 
-            },
-            res.send('Update Proyect')
-            );
+            }
+    );
+    res.send('Update Proyect');
+        } catch (e) {
+            // Print error on console
+            console.log(e);
+            // Send error message as a response 
+            res.status(500).send({
+                message: "Some error occurred"
+            });
+        }
 
 }
 
 async function deleteProyect (req, res) {
 
+    try{   
         const {idProyect} = req.params;
 
         const proyect = await dbManager.Proyect.destroy(
@@ -105,9 +115,17 @@ async function deleteProyect (req, res) {
                 where: {
                     idProyect: idProyect
                 }
-            },
-            res.send('proyect with id: ' + idProyect + ' delete')
-        )
+            }
+        );
+        res.send('proyect with id: ' + idProyect + ' delete');
+    } catch (e) {
+        // Print error on console
+        console.log(e);
+        // Send error message as a response 
+        res.status(500).send({
+            message: "Some error occurred"
+        });
+    }
 
 
 }
