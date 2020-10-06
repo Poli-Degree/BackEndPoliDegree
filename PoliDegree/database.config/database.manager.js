@@ -14,14 +14,17 @@ const Promise = PromiseModel (sequelizeConnection, Sequelize);
 const Proyect = ProyectModel (sequelizeConnection, Sequelize);
 
 //CREATE RELATIONS BETWEEN MODELS
-User.hasOne (Proyect, {foreignKey: 'idProyect', constraints: false});
-Proyect.belongsTo(User, {foreignKey: 'idUser', constraints: false});
+
+User.hasMany (Proyect, {foreignKey: 'idProyect', constraints: false});
+Proyect.belongsTo (User, {foreignKey: 'idUser', constraint: false});
 
 Proyect.hasMany (Task, {foreignKey: 'idTask', constraints: false});
 Task.belongsTo (Proyect, {foreignKey: 'idProyect', constraint: false});
 
 Proyect.hasMany (Promise, {foreignKey: 'idPromise', constraints: false});
-Promise.belongsTo (Proyect, {foreignKey: 'idProyect', constraints: false});
+Promise.belongsTo (Proyect, {foreignKey: 'idProyect', constraint: false});
+
+
 
 //GROUP MODELS
 const models = {
