@@ -1,12 +1,12 @@
 
 
 //Heroku:
-//mysql://bf5bf61e6516e7:@us-cdbr-east-02.cleardb.com/heroku_0bbbe33374fcc81?reconnect=true
+//mysql://b9da3cec03769a:941608c7@us-cdbr-east-02.cleardb.com/heroku_5ad851fbeac6d0f?reconnect=true
 const dbconfig = {
     HOST: "us-cdbr-east-02.cleardb.com",
-    USER: "bf5bf61e6516e7",
-    PASSWORD: "977e3aac",
-    DB: "heroku_0bbbe33374fcc81",
+    USER: "b9da3cec03769a",
+    PASSWORD: "941608c7",
+    DB: "heroku_5ad851fbeac6d0f",
     dialect: "mysql",
     pool: {
       max: 5,

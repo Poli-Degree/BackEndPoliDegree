@@ -5,7 +5,10 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true,
             autoIncrement: true
         },
-        title: Sequelize.STRING,
+        title: {
+                type: Sequelize.STRING,
+                unique: true
+        },
         objects: Sequelize.STRING,
         metodologia: Sequelize.STRING,
         teorico: Sequelize.STRING,
