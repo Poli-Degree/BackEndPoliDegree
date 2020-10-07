@@ -9,7 +9,7 @@ var userRouter = require('./routes/user.route');
 var taskRouter = require('./routes/task.route');
 var proyectRouter = require ('./routes/proyect.route');
 var promiseRouter = require ('./routes/promise.route');
-
+const cors = requiere('cors');
 const dbManager = require ("./database.config/database.manager");
 
 var app = express();
@@ -19,6 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/users', userRouter);
