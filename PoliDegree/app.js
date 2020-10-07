@@ -9,7 +9,7 @@ var userRouter = require('./routes/user.route');
 var taskRouter = require('./routes/task.route');
 var proyectRouter = require ('./routes/proyect.route');
 var promiseRouter = require ('./routes/promise.route');
-const cors = requiere('cors');
+const cors = require('cors');
 const dbManager = require ("./database.config/database.manager");
 
 var app = express();
