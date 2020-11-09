@@ -124,6 +124,36 @@ async function findUserById (req,res) {
     } 
 }
 
+async function findUserByUsername (req,res) {
+    try {
+        //Execute query
+        
+        const {username} = req.params;
+        const user = await dbManager.User.findOne (
+            {
+                where: {
+                    username: username
+                }
+            }
+        );
+        
+        //Send response
+        res.json({
+                data: user
+        });
+
+    } catch (e) {
+        // Print error on console
+        console.log(e);
+        // Send error message as a response 
+        res.status(500).send({
+            message: "Some error occurred"
+        });
+    } 
+}
+
+
+exports.findUserByUsername = findUserByUsername;
 exports.findUserById = findUserById;
 exports.updateUserById = updateUserById;
 exports.deleteUserById = deleteUserById;
