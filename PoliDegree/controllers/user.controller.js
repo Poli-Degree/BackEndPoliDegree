@@ -156,7 +156,7 @@ async function findUserTutor (req,res) {
     try {
         //Execute query
         
-        const {usertype} = "Tutor";
+        const {usertype} = req.params;
         const users = await dbManager.User.findAll (
             {
                 where: {
