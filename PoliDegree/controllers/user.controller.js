@@ -101,7 +101,7 @@ async function findUserById (req,res) {
         //Execute query
         
         const {idUser} = req.params;
-        const user = await dbManager.User.findOne (
+        const users = await dbManager.User.findOne (
             {
                 where: {
                     idUser: idUser
@@ -111,7 +111,7 @@ async function findUserById (req,res) {
         
         //Send response
         res.json({
-                data: user
+                data: users
         });
 
     } catch (e) {
@@ -152,7 +152,37 @@ async function findUserByUsername (req,res) {
     } 
 }
 
+async function findUserTutor (req,res) {
+    try {
+        //Execute query
+        
+        const {usertype} = "Tutor";
+        const users = await dbManager.User.findAll (
+            {
+                where: {
+                    usertype:  usertype
+                }
+            }
+        );
+        
+        //Send response
+        res.json({
+                data: users
+        });
 
+    } catch (e) {
+        // Print error on console
+        console.log(e);
+        // Send error message as a response 
+        res.status(500).send({
+            message: "Some error occurred"
+        });
+    } 
+}
+
+
+
+exports.findUserTutor = findUserTutor;
 exports.findUserByUsername = findUserByUsername;
 exports.findUserById = findUserById;
 exports.updateUserById = updateUserById;

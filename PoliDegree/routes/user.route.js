@@ -14,4 +14,6 @@ router.put('/:idUser', userController.updateUserById);
 //router.get('/:idUser', userController.findUserById);
 
 router.get('/:username', userController.findUserByUsername);
+
+router.get('/tutor', userController.findUserTutor);
 module.exports = router;
