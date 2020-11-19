@@ -9,7 +9,7 @@ router.get('/',proyectController.findAllProyects);
 
 router.get('/:idUser',proyectController.findProyectByIdUser);
 
-router.put('/:idUser', proyectController.updateProyectByIdUser);
+router.put('/:idProyect', proyectController.updateProyectByIdUser);
 
 router.delete('/:idProyect', proyectController.deleteProyect);
 
