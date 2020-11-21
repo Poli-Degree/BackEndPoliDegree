@@ -80,7 +80,7 @@ async function findProyectByIdUser (req, res) {
 async function updateProyectByIdUser (req, res) {
 
     try {
-    const {idUser} = req.params;
+    const {idProyect} = req.params;
 
     const Proyect = await dbManager.Proyect.update (
         {   title: req.body.title,
@@ -89,7 +89,7 @@ async function updateProyectByIdUser (req, res) {
             teorico: req.body.teorico,
             references: req.body.references}, 
                 {where: {
-                    idUser: idUser
+                    idProyect: idProyect
                 } 
             }
     );
