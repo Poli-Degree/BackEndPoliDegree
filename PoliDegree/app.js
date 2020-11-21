@@ -23,7 +23,6 @@ app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/users', userRouter);
-app.use('/users/tutor', userRouter);
 app.use('/tasks', taskRouter);
 app.use('/proyects', proyectRouter);
 app.use('/promises', promiseRouter);
