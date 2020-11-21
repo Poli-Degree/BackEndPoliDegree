@@ -6,16 +6,16 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true
         },
         title: {
-                type: Sequelize.STRING(1234),
+                type: Sequelize.STRING(1000),
                 unique: true
         },
-        objects: Sequelize.STRING(1234),
-        metodologia: Sequelize.STRING(1234),
-        teorico: Sequelize.STRING(1234),
-        references: Sequelize.STRING(1234),
+        objects: Sequelize.STRING(1000),
+        metodologia: Sequelize.STRING(1000),
+        teorico: Sequelize.STRING(1000),
+        references: Sequelize.STRING(1000),
         tutor: Sequelize.INTEGER,
         jurado1: Sequelize.INTEGER,
-        jurado1: Sequelize.INTEGER,
+        jurado2: Sequelize.INTEGER,
         acta: Sequelize.INTEGER,
         calificacion: Sequelize.INTEGER
     }, {
