@@ -101,10 +101,38 @@ async function findUserById (req,res) {
         //Execute query
         
         const {idUser} = req.params;
-        const user = await dbManager.User.findOne (
+        const users = await dbManager.User.findOne (
             {
                 where: {
                     idUser: idUser
+                }
+            }
+        );
+        
+        //Send response
+        res.json({
+                data: users
+        });
+
+    } catch (e) {
+        // Print error on console
+        console.log(e);
+        // Send error message as a response 
+        res.status(500).send({
+            message: "Some error occurred"
+        });
+    } 
+}
+
+async function findUserByUsername (req,res) {
+    try {
+        //Execute query
+        
+        const {username} = req.params;
+        const user = await dbManager.User.findOne (
+            {
+                where: {
+                    username: username
                 }
             }
         );
@@ -124,6 +152,38 @@ async function findUserById (req,res) {
     } 
 }
 
+async function findUserTutor (req,res) {
+    try {
+        //Execute query
+        
+        const {usertype} = req.params;
+        const users = await dbManager.User.findAll (
+            {
+                where: {
+                    usertype:  usertype
+                }
+            }
+        );
+        
+        //Send response
+        res.json({
+                data: users
+        });
+
+    } catch (e) {
+        // Print error on console
+        console.log(e);
+        // Send error message as a response 
+        res.status(500).send({
+            message: "Some error occurred"
+        });
+    } 
+}
+
+
+
+exports.findUserTutor = findUserTutor;
+exports.findUserByUsername = findUserByUsername;
 exports.findUserById = findUserById;
 exports.updateUserById = updateUserById;
 exports.deleteUserById = deleteUserById;
