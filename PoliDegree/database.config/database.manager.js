@@ -28,11 +28,12 @@ Task.belongsTo (Proyect, {foreignKey: 'idProyect', constraint: false});
 Proyect.hasMany (Promise, {foreignKey: 'idPromise', constraints: false});
 Promise.belongsTo (Proyect, {foreignKey: 'idProyect', constraint: false});
 
-Proyect.hasMany(Acta,{foreignKey: 'idActa', constraints: false});
-Acta.belongsTo(Proyect,{foreignKey: 'idProyect', constraints: false});
+Proyect.hasMany (Acta, {foreignKey: 'idActa', constraints: false});
+Acta.belongsTo (Proyect, {foreignKey: 'idProyect', constraint: false});
 
-Proyect.hasMany(Calificaciones,{foreignKey: 'idCalificaciones', constraints: false});
-Calificaciones.belongsTo(Proyect,{foreignKey: 'idProyect', constraints: false});
+Proyect.hasMany (Calificaciones, {foreignKey: 'idCalificaciones', constraints: false});
+Calificaciones.belongsTo (Proyect, {foreignKey: 'idProyect', constraint: false});
+
 
 //GROUP MODELS
 const models = {

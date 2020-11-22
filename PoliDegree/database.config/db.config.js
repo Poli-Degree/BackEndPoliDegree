@@ -1,8 +1,8 @@
 const dbconfig = {
     HOST: "aqx5w9yc5brambgl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    USER: "l0ml55vrb2t2he3h",
-    PASSWORD: "g60e30lri6fo7ewc",
-    DB: "plrilciearqtevva",
+    USER: "cfe4ct57nl3jjx0s",
+    PASSWORD: "b6399nwth8u2jvrq",
+    DB: "w27haak5vbjd602c",
     dialect: "mysql",
     pool: {
       max: 5,
