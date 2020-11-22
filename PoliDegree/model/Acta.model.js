@@ -15,7 +15,7 @@ module.exports = (sequelize, Sequelize) => {
         jurado1: Sequelize.STRING,
         notaJurado1: Sequelize.INTEGER,
         jurado2: Sequelize.STRING,
-        notaJurado2: Sequelize.INTEGER,
+        notaJurado2: Sequelize.INTEGER
        
     }, {
         tableName: "Actas"

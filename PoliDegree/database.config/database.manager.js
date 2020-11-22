@@ -39,7 +39,9 @@ const models = {
     User: User,
     Task: Task,
     Proyect: Proyect,
-    Promise: Promise
+    Promise: Promise,
+    Acta: Acta,
+    Calificaciones: Calificaciones
 };
 
 //Create object to manage the models and database

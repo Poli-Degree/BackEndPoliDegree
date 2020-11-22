@@ -11,7 +11,11 @@ async function createProyect  (req, res) {
         teorico: req.body.teorico,
         references: req.body.references,
         tutor: req.body.tutor,
-        idUser: req.body.idUser
+        idUser: req.body.idUser,
+        jurado1: req.body.jurado1,
+        jurado2: req.body.jurado2,
+        acta: req.body.acta,
+        calificacion: req.body.calificacion
     }
 
  
@@ -87,7 +91,13 @@ async function updateProyectByIdUser (req, res) {
             objects: req.body.objects,
             metodologia: req.body.metodologia,
             teorico: req.body.teorico,
-            references: req.body.references}, 
+            references: req.body.references,
+            tutor: req.body.tutor,
+            idUser: req.body.idUser,
+            jurado1: req.body.jurado1,
+            jurado2: req.body.jurado2,
+            acta: req.body.acta,
+            calificacion: req.body.calificacion}, 
                 {where: {
                     idProyect: idProyect
                 } 

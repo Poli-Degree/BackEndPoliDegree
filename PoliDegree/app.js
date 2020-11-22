@@ -9,6 +9,9 @@ var userRouter = require('./routes/user.route');
 var taskRouter = require('./routes/task.route');
 var proyectRouter = require ('./routes/proyect.route');
 var promiseRouter = require ('./routes/promise.route');
+var actaRouter = require ('./routes/acta.route');
+var calificacionRouter = require ('./routes/calificaciones.route');
+
 const cors = require('cors');
 const dbManager = require ("./database.config/database.manager");
 
@@ -26,6 +29,8 @@ app.use('/users', userRouter);
 app.use('/tasks', taskRouter);
 app.use('/proyects', proyectRouter);
 app.use('/promises', promiseRouter);
+app.use('/actas',actaRouter);
+app.use('/calificacion',calificacionRouter);
 
 dbManager.sequelizeConnection.authenticate()
   .then(() => {
