@@ -5,7 +5,7 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true,
             autoIncrement: true
         },
-        description: Sequelize.STRING,
+        description: Sequelize.TEXT,
         creationDate: Sequelize.STRING
     }, {
         tableName: "promises"

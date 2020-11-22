@@ -6,8 +6,8 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true
         },
        
-        autor: Sequelize.STRING,
-        nombreProyecto: Sequelize.STRING,
+        autor: Sequelize.STRING(1000),
+        nombreProyecto: Sequelize.STRING(1000),
         tutor: Sequelize.STRING,
         jurado: Sequelize.STRING,
         calificacion1: Sequelize.INTEGER,
@@ -16,12 +16,12 @@ module.exports = (sequelize, Sequelize) => {
         calificacion4: Sequelize.INTEGER,
         calificacion5: Sequelize.INTEGER,
         calificacion6: Sequelize.INTEGER,
-        comentario1: Sequelize.STRING,
-        comentario2: Sequelize.STRING,
-        comentario3: Sequelize.STRING,
-        comentario4: Sequelize.STRING,
-        comentario5: Sequelize.STRING,
-        comentario6: Sequelize.STRING
+        comentario1: Sequelize.TEXT,
+        comentario2: Sequelize.TEXT,
+        comentario3: Sequelize.TEXT,
+        comentario4: Sequelize.TEXT,
+        comentario5: Sequelize.TEXT,
+        comentario6: Sequelize.TEXT
     }, {
         tableName: "Calificaciones"
     });
