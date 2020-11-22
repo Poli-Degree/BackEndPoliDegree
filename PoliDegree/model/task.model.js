@@ -7,7 +7,8 @@ module.exports = (sequelize, Sequelize) => {
             },
             description: Sequelize.TEXT,
             creationDate: Sequelize.DATE,
-            limitDate: Sequelize.DATE
+            limitDate: Sequelize.DATE,
+            status: Sequelize.INTEGER
         }, {
             tableName: "tasks"
         });

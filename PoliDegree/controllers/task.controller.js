@@ -6,7 +6,8 @@ async function createTask (req,res) {
         description: req.body.description,
         creationDate: req.body.creationDate,
         limitDate: req.body.limitDate,
-        idProyect: req.body.idProyect
+        idProyect: req.body.idProyect,
+        status: 0
     }
 
     dbManager.Task.create(newTaskObject).then(
@@ -107,7 +108,8 @@ async function updateTaskById (req,res) {
     const task = await dbManager.Task.update(
         {
             description: req.body.description,
-            limitDate: req.body.limitDate
+            limitDate: req.body.limitDate,
+            status: req.body.status
         }, {
             where: {
                 idTask: idTask,

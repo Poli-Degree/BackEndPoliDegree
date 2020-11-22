@@ -5,7 +5,8 @@ async function createPromise (req,res) {
     const newPromiseObject = {
         description: req.body.description,
         creationDate: req.body.creationDate,
-        idProyect: req.body.idProyect
+        idProyect: req.body.idProyect,
+        status: 0
     }
 
     dbManager.Promise.create(newPromiseObject).then (
@@ -102,7 +103,8 @@ async function updatePromises (req,res) {
     
         const promise = await dbManager.Promise.update(
             {
-                description: req.body.description
+                description: req.body.description,
+                status: req.body.status
             }, {
                 where: {
                     idPromise: idPromise,
